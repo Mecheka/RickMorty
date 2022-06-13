@@ -13,7 +13,9 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
-
+    buildFeatures {
+        compose = true
+    }
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -22,6 +24,9 @@ android {
                 "proguard-rules.pro"
             )
         }
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = Version.compose
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -33,5 +38,15 @@ android {
 }
 
 dependencies {
+    implementation(Dependencies.Compose.themeAdapter)
     implementation(Dependencies.Material)
+    implementation(Dependencies.Compose.activity)
+    implementation(Dependencies.Compose.animation)
+    implementation(Dependencies.Compose.foundation)
+    implementation(Dependencies.Compose.ui)
+    implementation(Dependencies.Compose.material)
+    implementation(Dependencies.Compose.livedata)
+    debugImplementation(Dependencies.Compose.tooling)
+    implementation(Dependencies.Compose.preview)
+    implementation(Dependencies.Compose.themeAdapter)
 }

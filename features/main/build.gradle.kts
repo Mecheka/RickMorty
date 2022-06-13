@@ -23,6 +23,12 @@ android {
             )
         }
     }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = Version.compose
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -39,8 +45,19 @@ dependencies {
     implementation(Dependencies.AndroidX.core)
     implementation(Dependencies.Material)
     implementation(Dependencies.AndroidX.constraintLayout)
+    implementation(Dependencies.AndroidX.navFragment)
+    implementation(Dependencies.AndroidX.navUi)
     implementation(Dependencies.AndroidX.splash)
-    implementation("androidx.appcompat:appcompat:1.4.2")
-    implementation("com.google.android.material:material:1.4.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation(Dependencies.Compose.activity)
+    implementation(Dependencies.Compose.animation)
+    implementation(Dependencies.Compose.foundation)
+    implementation(Dependencies.Compose.ui)
+    implementation(Dependencies.Compose.material)
+    implementation(Dependencies.Compose.livedata)
+    debugImplementation(Dependencies.Compose.tooling)
+    implementation(Dependencies.Compose.preview)
+    implementation(Dependencies.Compose.themeAdapter)
+
+    debugImplementation( "androidx.customview:customview:1.2.0-alpha01")
+    debugImplementation("androidx.customview:customview-poolingcontainer:1.0.0-beta02")
 }

@@ -38,7 +38,9 @@ dependencies {
 
     implementation(Dependencies.AndroidX.appCompat)
     implementation(Dependencies.AndroidX.core)
-    implementation(Dependencies.Material)
+    implementation(Dependencies.Coroutine.coroutine)
     implementation(Dependencies.AndroidX.constraintLayout)
+    implementation(Dependencies.Material)
+    implementation(Dependencies.Lifecycle.lifecycle)
     implementation(Dependencies.AndroidX.splash)
 }
