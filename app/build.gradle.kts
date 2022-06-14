@@ -37,13 +37,20 @@ android {
 
 dependencies {
     implementation(project(":common:resource"))
+    implementation(project(":data"))
+    implementation(project(":domain"))
+    implementation(project(":features:main"))
     implementation(project(":features:splash"))
 
     implementation(Dependencies.AndroidX.appCompat)
     implementation(Dependencies.AndroidX.core)
     implementation(Dependencies.Material)
     implementation(Dependencies.AndroidX.constraintLayout)
+    implementation("androidx.appcompat:appcompat:1.4.2")
+    implementation("com.google.android.material:material:1.4.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     testImplementation(Dependencies.Junit.junit)
     androidTestImplementation(Dependencies.Junit.ext)
     androidTestImplementation(Dependencies.AndroidX.espresso)
+    implementation(Dependencies.Koin.android)
 }

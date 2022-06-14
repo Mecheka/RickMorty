@@ -32,6 +32,10 @@ object Dependencies {
         const val themeAdapter = "com.google.android.material:compose-theme-adapter:1.1.11"
     }
 
+    object Google {
+        const val gson = "com.google.code.gson:gson:${Version.gson}"
+    }
+
     const val Material = "com.google.android.material:material:${Version.material}"
 
     object Junit {
@@ -39,7 +43,17 @@ object Dependencies {
         const val ext = "androidx.test.ext:junit:${Version.junitExt}"
     }
 
+    object Koin {
+        const val android = "io.insert-koin:koin-android:${Version.koin}"
+        const val compose = "io.insert-koin:koin-androidx-compose:${Version.koin}"
+    }
+
     object Lifecycle {
         const val lifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:${Version.lifecycle}"
+    }
+
+    object Retrofit {
+        const val retrofit = "com.squareup.retrofit2:retrofit:${Version.retrofit}"
+        const val gson = "com.squareup.retrofit2:converter-gson:${Version.retrofit}"
     }
 }

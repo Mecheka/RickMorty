@@ -40,6 +40,7 @@ android {
 
 dependencies {
     implementation(project(":common:resource"))
+    implementation(project(":domain"))
 
     implementation(Dependencies.AndroidX.appCompat)
     implementation(Dependencies.AndroidX.core)
@@ -47,7 +48,6 @@ dependencies {
     implementation(Dependencies.AndroidX.constraintLayout)
     implementation(Dependencies.AndroidX.navFragment)
     implementation(Dependencies.AndroidX.navUi)
-    implementation(Dependencies.AndroidX.splash)
     implementation(Dependencies.Compose.activity)
     implementation(Dependencies.Compose.animation)
     implementation(Dependencies.Compose.foundation)
@@ -57,6 +57,8 @@ dependencies {
     debugImplementation(Dependencies.Compose.tooling)
     implementation(Dependencies.Compose.preview)
     implementation(Dependencies.Compose.themeAdapter)
+    implementation(Dependencies.Koin.android)
+    implementation(Dependencies.Koin.compose)
 
     debugImplementation( "androidx.customview:customview:1.2.0-alpha01")
     debugImplementation("androidx.customview:customview-poolingcontainer:1.0.0-beta02")

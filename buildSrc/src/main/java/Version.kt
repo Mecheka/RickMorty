@@ -7,10 +7,13 @@ object Version {
     const val composeAct = "1.4.0"
     const val composeViewModel = "2.4.1"
     const val espresso = "3.4.0"
+    const val gson = "2.9.0"
     const val splash = "1.0.0-beta02"
     const val navigation = "2.4.2"
     const val material = "1.6.1"
     const val junit = "4.13.2"
     const val junitExt = "1.1.3"
+    const val koin = "3.2.0"
     const val lifecycle = "2.4.0"
+    const val retrofit = "2.9.0"
 }
