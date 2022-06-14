@@ -65,12 +65,14 @@ fun PreviewCharacterItem() {
                 gender = "",
                 id = 0,
                 image = "",
-                locationEntity = Location(name = "", url = "",
+                locationEntity = Location(
+                    name = "", url = "",
                     created = "",
                     dimension = "",
                     id = 0,
                     residents = listOf(),
-                    type = ""),
+                    type = ""
+                ),
                 name = "Character",
                 originEntity = Origin(name = "", url = ""),
                 species = "",
@@ -87,27 +89,31 @@ fun PreviewCharacterItem() {
 fun PreviewCharacterList() {
     JetRickMortyTheme {
         LazyColumn {
-            items(List(10) {
-                Character(
-                    created = "",
-                    episode = listOf(),
-                    gender = "",
-                    id = 0,
-                    image = "",
-                    locationEntity = Location(name = "", url = "",
+            items(
+                List(10) {
+                    Character(
                         created = "",
-                        dimension = "",
+                        episode = listOf(),
+                        gender = "",
                         id = 0,
-                        residents = listOf(),
-                        type = ""),
-                    name = "",
-                    originEntity = Origin(name = "", url = ""),
-                    species = "",
-                    status = "",
-                    type = "",
-                    url = ""
-                )
-            }) {
+                        image = "",
+                        locationEntity = Location(
+                            name = "", url = "",
+                            created = "",
+                            dimension = "",
+                            id = 0,
+                            residents = listOf(),
+                            type = ""
+                        ),
+                        name = "",
+                        originEntity = Origin(name = "", url = ""),
+                        species = "",
+                        status = "",
+                        type = "",
+                        url = ""
+                    )
+                }
+            ) {
                 CharacterItem(character = it)
             }
         }

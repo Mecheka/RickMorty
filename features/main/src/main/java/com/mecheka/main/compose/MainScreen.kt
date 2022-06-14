@@ -1,7 +1,6 @@
 package com.mecheka.main.compose
 
 import android.content.res.Configuration
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
@@ -60,7 +59,6 @@ fun MainScreen() {
                 if (characters is UiState.Success) {
                     item {
                         ItemTitle(title = "Character") {
-
                         }
                     }
                     item {
@@ -69,14 +67,12 @@ fun MainScreen() {
                                 CharacterItem(character = it)
                             }
                         }
-
                     }
                 }
 
                 if (locations is UiState.Success) {
                     item {
                         ItemTitle(title = "Location") {
-
                         }
                     }
                     items(locations.data) {
