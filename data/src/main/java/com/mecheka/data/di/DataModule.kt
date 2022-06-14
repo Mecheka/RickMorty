@@ -6,7 +6,7 @@ import com.mecheka.data.repository.RickAndMortyRepositoryImpl
 import org.koin.dsl.module
 
 val dataModule = module {
-    single  { RetrofitClient().create() }
+    single { RetrofitClient().create() }
 
     factory<RickAndMortyRepository> { RickAndMortyRepositoryImpl(get()) }
 }

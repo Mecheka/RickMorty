@@ -32,8 +32,16 @@ object Dependencies {
         const val themeAdapter = "com.google.android.material:compose-theme-adapter:1.1.11"
     }
 
+    object Coil {
+        const val compose = "io.coil-kt:coil-compose:${Version.coil}"
+    }
+
     object Google {
         const val gson = "com.google.code.gson:gson:${Version.gson}"
+    }
+
+    object OkHttp {
+        const val logging = "com.squareup.okhttp3:logging-interceptor:${Version.okHttp}"
     }
 
     const val Material = "com.google.android.material:material:${Version.material}"

@@ -1,6 +1,5 @@
 package com.mecheka.data.model
 
-
 import com.google.gson.annotations.SerializedName
 
 data class Info(

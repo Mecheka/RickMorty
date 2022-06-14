@@ -9,12 +9,12 @@ import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.fragment.app.Fragment
 import com.mecheka.main.compose.MainScreen
 import com.mecheka.resource.JetRickMortyTheme
-import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 class MainFragment : Fragment() {
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
     ): View {
         // Inflate the layout for this fragment
         return ComposeView(requireContext()).apply {

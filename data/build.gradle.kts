@@ -37,5 +37,6 @@ dependencies {
     implementation(Dependencies.Google.gson)
     implementation(Dependencies.Retrofit.retrofit)
     implementation(Dependencies.Retrofit.gson)
+    implementation(Dependencies.OkHttp.logging)
     implementation(Dependencies.Koin.android)
 }

@@ -22,16 +22,26 @@ internal class GetAllCharacterUseCaseImpl(private val repository: RickAndMortyRe
         }
 }
 
-fun CharacterEntity.mapToDomain() = Character(created = this.created.orEmpty(),
+internal fun CharacterEntity.mapToDomain() = Character(
+    created = this.created.orEmpty(),
     episode = this.episode.orEmpty(),
     gender = this.gender.orEmpty(),
     id = this.id ?: 0,
     image = this.image.orEmpty(),
-    locationEntity = Location(name = this.locationEntity?.name.orEmpty(),
-        url = this.locationEntity?.url.orEmpty()),
+    locationEntity = Location(
+        name = this.locationEntity?.name.orEmpty(),
+        url = this.locationEntity?.url.orEmpty(),
+        created = "",
+        dimension = "",
+        id = 0,
+        residents = listOf(),
+        type = ""
+    ),
     name = this.name.orEmpty(),
-    originEntity = Origin(name = this.originEntity?.name.orEmpty(),
-        url = this.originEntity?.url.orEmpty()),
+    originEntity = Origin(
+        name = this.originEntity?.name.orEmpty(),
+        url = this.originEntity?.url.orEmpty()
+    ),
     species = this.species.orEmpty(),
     status = this.status.orEmpty(),
     type = this.type.orEmpty(),
