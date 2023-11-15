@@ -1,5 +1,6 @@
 package com.mecheka.main.compose
 
+import android.annotation.SuppressLint
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -26,6 +27,7 @@ import com.mecheka.main.UiState
 import com.mecheka.resource.JetRickMortyTheme
 import org.koin.androidx.compose.getViewModel
 
+@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun MainScreen() {
     val viewModel = getViewModel<MainViewModel>()
@@ -64,7 +66,7 @@ fun MainScreen() {
                     item {
                         LazyRow(contentPadding = PaddingValues(horizontal = 16.dp)) {
                             items(characters.data) {
-                                CharacterItem(character = it)
+                                CharacterItem(character = it, onLikeClick = viewModel::onCharacterLike)
                             }
                         }
                     }

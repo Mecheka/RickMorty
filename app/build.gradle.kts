@@ -4,6 +4,7 @@ plugins {
 }
 
 android {
+    namespace = "com.mecheka.rickmorty"
     compileSdk = Config.targetSdk
 
     defaultConfig {

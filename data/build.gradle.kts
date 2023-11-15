@@ -4,6 +4,7 @@ plugins {
 }
 
 android {
+    namespace = "com.mecheka.rickmorty.data"
     compileSdk = Config.targetSdk
 
     defaultConfig {
@@ -39,4 +40,11 @@ dependencies {
     implementation(Dependencies.Retrofit.gson)
     implementation(Dependencies.OkHttp.logging)
     implementation(Dependencies.Koin.android)
+
+//    Ktor
+    implementation("io.ktor:ktor-client-okhttp:2.3.5")
+    implementation("io.ktor:ktor-client-logging-jvm:2.3.5")
+    implementation("io.ktor:ktor-client-serialization:2.3.5")
+    implementation("io.ktor:ktor-client-content-negotiation:2.3.5")
+    implementation("io.ktor:ktor-serialization-gson:2.3.5")
 }

@@ -4,6 +4,7 @@ plugins {
 }
 
 android {
+    namespace = "com.mecheka.rickmorty.splash"
     compileSdk = Config.targetSdk
 
     defaultConfig {

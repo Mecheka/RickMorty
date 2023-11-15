@@ -1,5 +1,7 @@
 package com.mecheka.main.compose
 
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -14,6 +16,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -22,9 +25,10 @@ import com.mecheka.domain.character.model.Character
 import com.mecheka.domain.character.model.Location
 import com.mecheka.domain.character.model.Origin
 import com.mecheka.resource.JetRickMortyTheme
+import com.mecheka.rickmorty.main.R
 
 @Composable
-fun CharacterItem(character: Character) {
+fun CharacterItem(character: Character, onLikeClick: (Character) -> Unit = {}) {
     Card(
         elevation = 4.dp,
         modifier = Modifier
@@ -42,6 +46,17 @@ fun CharacterItem(character: Character) {
                     .align(Alignment.CenterHorizontally)
                     .clip(CircleShape)
             )
+            Image(painter = painterResource(id = if (character.isLike) R.drawable.ic_like else R.drawable.ic_unlike),
+                contentDescription = null,
+                modifier = Modifier
+                    .padding(8.dp)
+                    .size(24.dp)
+                    .align(Alignment.CenterHorizontally)
+                    .clickable {
+                        onLikeClick(character)
+                    }
+            )
+            Text(text = character.likeCount.toString(), modifier = Modifier.align(Alignment.CenterHorizontally))
             Text(
                 text = character.name,
                 maxLines = 1,
@@ -110,7 +125,8 @@ fun PreviewCharacterList() {
                         species = "",
                         status = "",
                         type = "",
-                        url = ""
+                        url = "",
+                        isLike = it %2 == 0
                     )
                 }
             ) {
