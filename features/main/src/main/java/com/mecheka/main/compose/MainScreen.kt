@@ -29,8 +29,7 @@ import org.koin.androidx.compose.getViewModel
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
-fun MainScreen() {
-    val viewModel = getViewModel<MainViewModel>()
+fun MainScreen(viewModel: MainViewModel) {
     val scaffold = rememberScaffoldState()
 
     LaunchedEffect(key1 = viewModel) {
@@ -91,6 +90,6 @@ fun MainScreen() {
 @Composable
 fun PreviewTest() {
     JetRickMortyTheme {
-        MainScreen()
+        MainScreen(getViewModel())
     }
 }

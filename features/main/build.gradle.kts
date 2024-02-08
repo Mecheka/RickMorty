@@ -61,6 +61,7 @@ dependencies {
     implementation(Dependencies.Coil.compose)
     implementation(Dependencies.Koin.android)
     implementation(Dependencies.Koin.compose)
+    implementation(Dependencies.AndroidX.splash)
 
     debugImplementation("androidx.customview:customview:1.2.0-alpha01")
     debugImplementation("androidx.customview:customview-poolingcontainer:1.0.0-beta02")
