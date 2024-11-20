@@ -3,7 +3,7 @@ object Version {
     const val appCompat = "1.4.2"
     const val constraintLayout = "2.1.4"
     const val coroutine = "1.6.2"
-    const val compose = "1.1.1"
+    const val compose = "1.5.5"
     const val composeAct = "1.4.0"
     const val composeViewModel = "2.4.1"
     const val coil = "2.1.0"

@@ -7,6 +7,7 @@ android {
     compileSdk = Config.targetSdk
 
     defaultConfig {
+        namespace = "com.mecheka.rickmorty"
         applicationId = Config.applicationId
         minSdk = Config.minSdk
         targetSdk = Config.targetSdk
@@ -27,11 +28,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "21"
     }
 }
 
@@ -46,9 +47,6 @@ dependencies {
     implementation(Dependencies.AndroidX.core)
     implementation(Dependencies.Material)
     implementation(Dependencies.AndroidX.constraintLayout)
-    implementation("androidx.appcompat:appcompat:1.4.2")
-    implementation("com.google.android.material:material:1.4.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     testImplementation(Dependencies.Junit.junit)
     androidTestImplementation(Dependencies.Junit.ext)
     androidTestImplementation(Dependencies.AndroidX.espresso)
