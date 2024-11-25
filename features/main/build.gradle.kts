@@ -1,6 +1,8 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -50,12 +52,11 @@ dependencies {
     implementation(Dependencies.AndroidX.navFragment)
     implementation(Dependencies.AndroidX.navUi)
     implementation(Dependencies.Coil.compose)
-    implementation(Dependencies.Koin.android)
-    implementation(Dependencies.Koin.compose)
 
     val composeBom = platform("androidx.compose:compose-bom:2024.10.01")
     implementation(composeBom)
     androidTestImplementation(composeBom)
+    implementation("androidx.activity:activity-compose:1.9.3")
 
     // Choose one of the following:
     // Material Design 3
@@ -71,4 +72,15 @@ dependencies {
     // Android Studio Preview support
     implementation("androidx.compose.ui:ui-tooling-preview")
     debugImplementation("androidx.compose.ui:ui-tooling")
+    implementation("com.google.dagger:hilt-android:2.51.1")
+    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.7")
+}
+
+kapt {
+    correctErrorTypes = true
+}
+
+hilt {
+    enableExperimentalClasspathAggregation = true
 }

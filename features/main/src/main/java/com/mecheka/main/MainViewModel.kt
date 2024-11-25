@@ -6,6 +6,8 @@ import com.mecheka.domain.character.GetAllCharacterUseCase
 import com.mecheka.domain.character.model.Character
 import com.mecheka.domain.character.model.Location
 import com.mecheka.domain.location.GetAllLocationUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -14,7 +16,8 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.stateIn
 
-class MainViewModel(
+@HiltViewModel
+class MainViewModel @Inject constructor (
     private val getAllCharacterUseCase: GetAllCharacterUseCase,
     private val getAllLocationUseCase: GetAllLocationUseCase,
 ) : ViewModel() {

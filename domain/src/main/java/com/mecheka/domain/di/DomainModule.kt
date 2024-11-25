@@ -4,9 +4,17 @@ import com.mecheka.domain.character.GetAllCharacterUseCase
 import com.mecheka.domain.character.GetAllCharacterUseCaseImpl
 import com.mecheka.domain.location.GetAllLocationUseCase
 import com.mecheka.domain.location.GetAllLocationUseCaseImpl
-import org.koin.dsl.module
+import dagger.Binds
+import dagger.Module
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ViewModelComponent
 
-val domainModule = module {
-    factory<GetAllCharacterUseCase> { GetAllCharacterUseCaseImpl(get()) }
-    factory<GetAllLocationUseCase> { GetAllLocationUseCaseImpl(get()) }
+@Module
+@InstallIn(ViewModelComponent::class)
+abstract class DomainModule {
+    @Binds
+    abstract fun bindsGetGetAllCharacterUseCase(impl: GetAllCharacterUseCaseImpl): GetAllCharacterUseCase
+
+    @Binds
+    abstract fun bindsGetAllLocationUseCase(impl: GetAllLocationUseCaseImpl): GetAllLocationUseCase
 }

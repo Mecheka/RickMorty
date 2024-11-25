@@ -9,6 +9,7 @@ import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.fragment.app.Fragment
 import com.mecheka.main.compose.MainScreen
 import com.mecheka.resource.JetRickMortyTheme
+import dagger.hilt.android.AndroidEntryPoint
 
 class MainFragment : Fragment() {
     override fun onCreateView(

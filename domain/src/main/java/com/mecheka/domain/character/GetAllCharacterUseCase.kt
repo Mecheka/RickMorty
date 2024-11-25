@@ -5,6 +5,7 @@ import com.mecheka.data.repository.RickAndMortyRepository
 import com.mecheka.domain.character.model.Character
 import com.mecheka.domain.character.model.Location
 import com.mecheka.domain.character.model.Origin
+import javax.inject.Inject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
@@ -12,7 +13,7 @@ interface GetAllCharacterUseCase {
     operator fun invoke(): Flow<Result<List<Character>>>
 }
 
-internal class GetAllCharacterUseCaseImpl(private val repository: RickAndMortyRepository) :
+class GetAllCharacterUseCaseImpl @Inject constructor(private val repository: RickAndMortyRepository) :
     GetAllCharacterUseCase {
     override fun invoke() = repository.getAllCharacter()
         .map { data ->

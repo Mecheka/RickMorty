@@ -1,5 +1,6 @@
 package com.mecheka.main.compose
 
+import android.annotation.SuppressLint
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -21,14 +22,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.mecheka.main.MainViewModel
 import com.mecheka.main.UiState
 import com.mecheka.resource.JetRickMortyTheme
-import org.koin.androidx.compose.getViewModel
 
+@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
-fun MainScreen() {
-    val viewModel = getViewModel<MainViewModel>()
+fun MainScreen(viewModel: MainViewModel = viewModel()) {
     val scaffold = rememberScaffoldState()
 
     LaunchedEffect(key1 = viewModel) {
