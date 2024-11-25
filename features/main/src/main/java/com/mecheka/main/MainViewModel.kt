@@ -1,5 +1,6 @@
 package com.mecheka.main
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mecheka.domain.character.GetAllCharacterUseCase
@@ -20,6 +21,7 @@ import kotlinx.coroutines.flow.stateIn
 class MainViewModel @Inject constructor (
     private val getAllCharacterUseCase: GetAllCharacterUseCase,
     private val getAllLocationUseCase: GetAllLocationUseCase,
+    private val randomNumber: RandomNumber
 ) : ViewModel() {
     private val characterFlow = MutableStateFlow<UiState<List<Character>>>(UiState.Loading)
     private val locationFlow = MutableStateFlow<UiState<List<Location>>>(UiState.Loading)
@@ -30,6 +32,7 @@ class MainViewModel @Inject constructor (
     }.stateIn(viewModelScope, SharingStarted.Eagerly, true)
 
     fun loadAllCharacter() {
+        Log.d("Random number", "Random number: ${randomNumber.number}")
         getAllCharacterUseCase()
             .onEach { result ->
                 result.onSuccess {
